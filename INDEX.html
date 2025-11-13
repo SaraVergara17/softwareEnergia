@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Monitor de Energía</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -40,4 +40,37 @@
       </div>
 
       <div class="card">
-        <h3>Clasificación del Consumo</
+        <h3>Clasificación del Consumo</h3>
+        <ul id="clasificacion"></ul>
+      </div>
+
+      <div class="card">
+        <h3>Historial</h3>
+        <table id="tabla-historial">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>kWh</th>
+              <th>Costo</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h3>Gráfica de Consumo</h3>
+        <canvas id="grafica"></canvas>
+      </div>
+
+      <div class="card">
+        <h3>Generar Informe</h3>
+        <button onclick="descargarInforme()">Descargar Informe</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

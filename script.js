@@ -1,3 +1,6 @@
+const user = document.getElementById("user");
+const pass = document.getElementById("pass");
+
 function login() {
   if (user.value && pass.value) {
     document.getElementById("login-page").style.display = "none";
