@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monitor de Energía</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- LOGIN PAGE -->
+  <div id="login-page">
+    <div id="login-box">
+      <h2>Iniciar Sesión</h2>
+      <input type="text" id="user" placeholder="Usuario"> 
+      <input type="password" id="pass" placeholder="Contraseña"> 
+      <button onclick="login()">Entrar</button>
+    </div>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div id="dashboard">
+    <header>
+      <h2>Panel de Energía</h2>
+    </header>
+
+    <div class="container">
+      <div class="card">
+        <h3>Consumo Actual de Energía</h3>
+        <p id="energy-value">Cargando...</p>
+      </div>
+
+      <div class="card">
+        <h3>Generar Informe</h3>
+        <p>Puedes descargar un reporte con el análisis de energía estimado.</p>
+        <button class="download-btn" onclick="descargarInforme()">Descargar Informe</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
