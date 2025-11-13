@@ -5,14 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Monitor de Energía</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <!-- LOGIN PAGE -->
+
+  <!-- LOGIN -->
   <div id="login-page">
     <div id="login-box">
       <h2>Iniciar Sesión</h2>
-      <input type="text" id="user" placeholder="Usuario"> 
-      <input type="password" id="pass" placeholder="Contraseña"> 
+      <input type="text" id="user" placeholder="Usuario">
+      <input type="password" id="pass" placeholder="Contraseña">
       <button onclick="login()">Entrar</button>
     </div>
   </div>
@@ -21,22 +23,21 @@
   <div id="dashboard">
     <header>
       <h2>Panel de Energía</h2>
+      <button id="modo-btn" onclick="toggleModo()">Modo Claro / Oscuro</button>
     </header>
 
     <div class="container">
+      
       <div class="card">
-        <h3>Consumo Actual de Energía</h3>
-        <p id="energy-value">Cargando...</p>
+        <h3>Consumo Actual</h3>
+        <p id="energy-value">--</p>
+        <p id="estado-consumo"></p>
+        <p id="costo"></p>
+        <p id="co2"></p>
+        <p id="comparacion"></p>
+        <p id="prediccion"></p>
+        <p id="recomendacion"></p>
       </div>
 
       <div class="card">
-        <h3>Generar Informe</h3>
-        <p>Puedes descargar un reporte con el análisis de energía estimado.</p>
-        <button class="download-btn" onclick="descargarInforme()">Descargar Informe</button>
-      </div>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
+        <h3>Clasificación del Consumo</
