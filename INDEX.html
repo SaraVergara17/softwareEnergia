@@ -20,14 +20,24 @@
   </div>
 
   <!-- DASHBOARD -->
-  <div id="dashboard">
+  <div id="dashboard" style="display:none;">
     <header>
       <h2>Panel de Energía</h2>
       <button id="modo-btn" onclick="toggleModo()">Modo Claro / Oscuro</button>
     </header>
 
     <div class="container">
-      
+      <!-- SUGERENCIA SIMPLE DE AHORRO -->
+      <div class="card">
+      <h3>Bienvenido</h3>
+      <p id="mensaje-bienvenida">¡Hola! Gracias por usar tu asistente de energía.</p>
+      </div>
+
+      <div class="card">
+    <button onclick="registrarNuevoConsumo()">Actualizar consumo</button>
+      </div>
+
+      <!-- CONSUMO ACTUAL -->
       <div class="card">
         <h3>Consumo Actual</h3>
         <p id="energy-value">--</p>
@@ -39,11 +49,15 @@
         <p id="recomendacion"></p>
       </div>
 
+
+
+      <!-- CLASIFICACIÓN DEL CONSUMO -->
       <div class="card">
         <h3>Clasificación del Consumo</h3>
         <ul id="clasificacion"></ul>
       </div>
 
+      <!-- HISTORIAL DE CONSUMO -->
       <div class="card">
         <h3>Historial</h3>
         <table id="tabla-historial">
@@ -58,11 +72,13 @@
         </table>
       </div>
 
+      <!-- GRÁFICA -->
       <div class="card">
         <h3>Gráfica de Consumo</h3>
         <canvas id="grafica"></canvas>
       </div>
 
+      <!-- INFORME -->
       <div class="card">
         <h3>Generar Informe</h3>
         <button onclick="descargarInforme()">Descargar Informe</button>
