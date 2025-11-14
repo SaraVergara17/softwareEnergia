@@ -1,11 +1,4 @@
-/* ===========================
-   energIA - UI principal
-   NUEVO MODO CLARO + MODO OSCURO
-   =========================== */
 
-/* ===========================
-   PALETA DE COLORES
-   =========================== */
 :root {
   /* Modo claro */
   --light-bg: linear-gradient(160deg, #FFF7EC 0%, #FFE9D6 40%, #FFF3E2 100%);
