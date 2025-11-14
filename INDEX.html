@@ -3,88 +3,119 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Monitor de Energía</title>
+  <title>energIA - Asistente de Energía</title>
+
   <link rel="stylesheet" href="styles.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
-  <!-- LOGIN -->
+  <!-- PANTALLA DE LOGIN -->
   <div id="login-page">
     <div id="login-box">
-      <h2>Iniciar Sesión</h2>
-      <input type="text" id="user" placeholder="Usuario">
+      <div class="login-logo">
+        <!-- Aquí puedes poner la imagen de tu logo -->
+        <span>energIA</span>
+      </div>
+      <h2>Bienvenido a energIA</h2>
+      <p>Inicia sesión para ver el análisis inteligente de tu consumo energético.</p>
+
+      <input type="text" id="user" placeholder="Nombre de usuario">
       <input type="password" id="pass" placeholder="Contraseña">
+
       <button onclick="login()">Entrar</button>
     </div>
   </div>
 
-  <!-- DASHBOARD -->
-  <div id="dashboard" style="display:none;">
-    <header>
-      <h2>Panel de Energía</h2>
-      <button id="modo-btn" onclick="toggleModo()">Modo Claro / Oscuro</button>
+  <!-- DASHBOARD PRINCIPAL -->
+  <div id="dashboard">
+
+    <!-- HEADER SUPERIOR -->
+    <header class="app-header">
+      <div class="header-left">
+        <div class="logo-slot">
+          <!-- Espacio para logo (imagen) -->
+          <!-- <img src="ruta/logo.png" alt="Logo energIA"> -->
+        </div>
+        <div class="header-text">
+          <h1>energIA</h1>
+          <p>Asistente inteligente de energía</p>
+        </div>
+      </div>
+
+      <button id="modo-btn" onclick="toggleModo()">Modo claro / oscuro</button>
     </header>
 
-    <div class="container">
-      <!-- SUGERENCIA SIMPLE DE AHORRO -->
-      <div class="card">
-      <h3>Bienvenido</h3>
-      <p id="mensaje-bienvenida">¡Hola! Gracias por usar tu asistente de energía.</p>
-      <p id="recomendacion"></p>
-      </div>
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="app-main">
 
-      <div class="card">
-    <button onclick="registrarNuevoConsumo()">Actualizar consumo</button>
-      </div>
+      <!-- MENSAJE DE BIENVENIDA + CONSEJO -->
+      <section class="welcome-row">
+        <div class="card welcome-card">
+          <p id="mensaje-bienvenida">
+            ¡Hola! Gracias por usar energIA. Aquí verás un resumen personalizado de tu consumo.
+          </p>
+          <p id="sugerencia-simple" class="sugerencia">
+            Consejo de ahorro: apaga los dispositivos que no estés utilizando.
+          </p>
+        </div>
+      </section>
 
-      <!-- CONSUMO ACTUAL -->
-      <div class="card">
-        <h3>Consumo Actual</h3>
-        <p id="energy-value">--</p>
-        <p id="estado-consumo"></p>
-        <p id="costo"></p>
-        <p id="co2"></p>
-        <p id="comparacion"></p>
-        <p id="prediccion"></p>
-      </div>
+      <!-- TRES CARDS PRINCIPALES -->
+      <section class="cards-row">
+        <!-- CONSUMO ACTUAL -->
+        <div class="card big-card">
+          <h3>Consumo actual</h3>
+          <p id="energy-value" class="kpi">-- kWh</p>
+          <p id="estado-consumo" class="estado"></p>
+          <p id="costo"></p>
+          <p id="co2"></p>
+          <p id="comparacion"></p>
+          <p id="prediccion"></p>
+          <p id="recomendacion"></p>
+        </div>
 
+        <!-- HISTORIAL -->
+        <div class="card big-card">
+          <h3>Historial reciente</h3>
+          <table id="tabla-historial">
+            <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>kWh</th>
+                <th>Costo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- JS llena esto -->
+            </tbody>
+          </table>
+        </div>
 
-
-      <!-- CLASIFICACIÓN DEL CONSUMO -->
-      <div class="card">
-        <h3>Clasificación del Consumo</h3>
-        <ul id="clasificacion"></ul>
-      </div>
-
-      <!-- HISTORIAL DE CONSUMO -->
-      <div class="card">
-        <h3>Historial</h3>
-        <table id="tabla-historial">
-          <thead>
-            <tr>
-              <th>Fecha</th>
-              <th>kWh</th>
-              <th>Costo</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
-      </div>
+        <!-- CLASIFICACIÓN -->
+        <div class="card big-card">
+          <h3>Clasificación del consumo</h3>
+          <ul id="clasificacion">
+            <!-- JS llena esto -->
+          </ul>
+        </div>
+      </section>
 
       <!-- GRÁFICA -->
-      <div class="card">
-        <h3>Gráfica de Consumo</h3>
-        <canvas id="grafica"></canvas>
-      </div>
+      <section class="chart-row">
+        <div class="card chart-card">
+          <h3>Gráfica de consumo</h3>
+          <canvas id="grafica"></canvas>
+        </div>
+      </section>
 
-      <!-- INFORME -->
-      <div class="card">
-        <h3>Generar Informe</h3>
-        <button onclick="descargarInforme()">Descargar Informe</button>
-      </div>
+      <!-- BOTONES DE ACCIÓN -->
+      <section class="actions-row">
+        <button class="btn-primary" onclick="registrarNuevoConsumo()">Actualizar consumo</button>
+        <button class="btn-secondary" onclick="descargarInforme()">Generar informe</button>
+      </section>
 
-    </div>
+    </main>
   </div>
 
   <script src="script.js"></script>

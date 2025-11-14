@@ -232,7 +232,7 @@ function actualizarGrafica() {
 
 // Modo claro / oscuro
 function toggleModo() {
-  document.body.classList.toggle('dark');
+  document.body.classList.toggle('light');
 }
 
 // Descargar informe de energía
